@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line,XAxis,YAxis,ZAxis,Tooltip,BarChart ,Bar} from 'recharts';
+import { LineChart, Line,XAxis,YAxis,ZAxis,Tooltip,BarChart ,Bar,PieChart,Pie} from 'recharts';
 
 const datum = [
   {
@@ -93,6 +93,11 @@ const Singledata = () => {
             <XAxis dataKey={"name"}></XAxis>
             <YAxis></YAxis>
            </BarChart>
+           <PieChart width={600} height={600} data={datum}>
+              <Pie data={datum} dataKey="math" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
+  <Pie data={datum} dataKey="chemistry" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
+             <XAxis dataKey={"name"}></XAxis>
+           </PieChart>
         </div>
     );
 };
