@@ -1,7 +1,9 @@
 import Linechart from './component/Linechart';
 import './App.css'
 import { Suspense } from 'react';
-const chart=fetch('marks.json').then(res=>res.json())
+import axios from 'axios'
+import Marks from './component/marks/Marks';
+const chart=axios.get('marks.json');
 
 function App() {
  
@@ -10,7 +12,10 @@ function App() {
     <>
       <p>Programmer</p>
       <Suspense fallback={<p>Data load</p>}>
-        <Linechart chart={chart}></Linechart>
+        <Linechart ></Linechart>
+      </Suspense>
+      <Suspense fallback={<p>Data is loading</p>}>
+        <Marks chart={chart}></Marks>
       </Suspense>
     </>
   )

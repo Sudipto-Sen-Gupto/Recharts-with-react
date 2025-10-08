@@ -1,16 +1,13 @@
-import React, { use } from 'react';
+
 
 import Singledata from './singledata/Singledata';
 
-const Linechart = ({chart}) => {
-    const data=use(chart)
-    console.log(data);
+const Linechart = () => {
+    
    
     return (
         <div>
-            {/* {
-                data.map(datum=><Singledata key={datum.name} datum={datum}></Singledata>)
-            } */}
+            
            <Singledata></Singledata>
         </div> 
     );
